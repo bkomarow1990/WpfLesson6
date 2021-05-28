@@ -1,0 +1,15 @@
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\bin\Debug\WpfLesson6.exe.config
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\bin\Debug\WpfLesson6.exe
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\bin\Debug\WpfLesson6.pdb
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.csprojAssemblyReference.cache
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\MainWindow.g.cs
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\App.g.cs
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6_MarkupCompile.cache
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6_MarkupCompile.lref
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\MainWindow.baml
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.g.resources
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.Properties.Resources.resources
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.csproj.GenerateResource.cache
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.exe
+C:\Users\Gnidez\source\repos\WpfLesson6\WpfLesson6\obj\Debug\WpfLesson6.pdb
