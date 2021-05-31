@@ -21,10 +21,11 @@ namespace WpfLesson6
     /// </summary>
     public partial class MainWindow : Window
     {
-        MyColor myColor;
+        ViewModel viewModel = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
     }
 }
