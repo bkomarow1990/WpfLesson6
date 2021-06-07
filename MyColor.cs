@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace WpfLesson6
 {
-    class MyColor : INotifyPropertyChanged
+    public class MyColor : INotifyPropertyChanged
     {
         Color myColor ;
 
@@ -19,6 +19,43 @@ namespace WpfLesson6
             set
             {
                 myColor.A = value;
+                OnPropertyChanged();
+                OnPropertyChanged("MyColor_");
+            }
+        }
+        public byte Red
+        {
+            get { return myColor.R; }
+            set
+            {
+                myColor.R = value;
+                OnPropertyChanged();
+                OnPropertyChanged("MyColor_");
+            }
+        }
+        public string HexColor
+        {
+            get
+            {
+                return "#" + myColor.R.ToString("X2") + myColor.G.ToString("X2") + myColor.B.ToString("X2");
+            }
+        }
+        public byte Blue
+        {
+            get { return myColor.B; }
+            set
+            {
+                myColor.B = value;
+                OnPropertyChanged();
+                OnPropertyChanged("MyColor_");
+            }
+        }
+        public byte Green
+        {
+            get { return myColor.G; }
+            set
+            {
+                myColor.G = value;
                 OnPropertyChanged();
                 OnPropertyChanged("MyColor_");
             }
@@ -41,7 +78,7 @@ namespace WpfLesson6
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        public void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }

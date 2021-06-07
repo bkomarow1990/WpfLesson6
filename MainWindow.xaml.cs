@@ -21,11 +21,19 @@ namespace WpfLesson6
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel viewModel = new ViewModel();
+        ViewModel viewModel ;
         public MainWindow()
         {
+            viewModel = new ViewModel();
             InitializeComponent();
             this.DataContext = viewModel;
+            //ColorsListBox.ItemsSource = viewModel.ColorsCollection;
+        }
+
+        private void ColorsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            viewModel.MyColor_ = (MyColor)ColorsListBox.SelectedItem;
+            viewModel.MyColor_.OnPropertyChanged();
         }
     }
 }

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLesson6"
-        d:DataContext="{d:DesignInstance Type=local:MyColor}"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -24,26 +24,26 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55"></ColumnDefinition>
             <ColumnDefinition Width="55"></ColumnDefinition>
-            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="55"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0">Alpha:</Label>
             <TextBlock  Margin="0,6,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding MyColor_.Alpha, Mode=OneWay}"/>
         <Label Grid.Column="0" Grid.Row="1">Red:</Label>
-        <TextBlock Text="255" Margin="0,6,0,0" Grid.Column="1" Grid.Row="1"/>
-        <Label Grid.Column="0" Grid.Row="2">Green:</Label>
-        <TextBlock Text="255" Margin="0,6,0,0" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Margin="0,6,0,0" Grid.Column="1" Grid.Row="1" Text="{Binding MyColor_.Red, Mode=OneWay}"/>
+        <Label Grid.Column="0" Grid.Row="2" >Green:</Label>
+            <TextBlock Margin="0,6,0,0" Grid.Row="2" Grid.Column="1" Text="{Binding MyColor_.Green, Mode=OneWay}"/>
         <Label Grid.Column="0" Grid.Row="3" >Blue:</Label>
-        <TextBlock Text="255" Margin="0,6,0,0" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock Margin="0,6,0,0" Grid.Row="3" Grid.Column="1" Text="{Binding MyColor_.Blue, Mode=OneWay}"/>
             <Slider Grid.Row="0" Grid.Column="2" Margin="0,5,0,0" Maximum="255" Minimum="1" Value="{Binding MyColor_.Alpha, Mode=OneWayToSource}">
             
         </Slider>
-        <Slider Grid.Row="1" Grid.Column="2" Margin="0,5,0,0"></Slider>
-        <Slider Grid.Row="2" Grid.Column="2" Margin="0,5,0,0"></Slider>
-        <Slider Grid.Row="3" Grid.Column="2" Margin="0,5,0,0"></Slider>
+            <Slider Grid.Row="1" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Red, Mode=OneWayToSource}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
+            <Slider Grid.Row="2" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Green, Mode=OneWayToSource}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
+            <Slider Grid.Row="3" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Blue, Mode=OneWayToSource}" Maximum="255" Minimum="1" SmallChange="1"></Slider>
             <Border Grid.Column="3"  Grid.Row="0" Grid.RowSpan="4">
                 <Border.Background>
-                    <SolidColorBrush Color="{Binding Path=MyColor_.MyColor}"></SolidColorBrush>
+                    <SolidColorBrush Color="{Binding Path=MyColor_.MyColor_}"></SolidColorBrush>
                 </Border.Background>
             </Border>
         </Grid>
@@ -55,8 +55,23 @@
             <Button Grid.Column="0">Add</Button>
             <Button Grid.Column="1">Add</Button>
         </Grid>
-        <ListBox Grid.Row="2">
-            <ListBoxItem>Fefe</ListBoxItem>
+        <ListBox Grid.Row="2" Name="ColorsListBox" ItemsSource="{Binding ColorsCollection}" SelectionChanged="ColorsListBox_SelectionChanged">
+            <!--<ListBox.ItemTemplate>
+                <ListBoxItem>Fefe</ListBoxItem>
+            </ListBox.ItemTemplate>-->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <Border Width="100" Height="75" >
+                            <Border.Background>
+                                <SolidColorBrush Color="{Binding Path=MyColor_}"></SolidColorBrush>
+                            </Border.Background>
+                        </Border>
+                        <TextBlock FontSize="16" Text="{Binding Path=HexColor}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>    
     </Grid>
 </Window>
