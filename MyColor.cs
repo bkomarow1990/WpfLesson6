@@ -9,10 +9,9 @@ using System.Windows.Media;
 
 namespace WpfLesson6
 {
-    public class MyColor : INotifyPropertyChanged
+    public class MyColor : INotifyPropertyChanged, ICloneable
     {
-        Color myColor ;
-
+        Color myColor;
         public byte Alpha
         {
             get { return myColor.A; }
@@ -21,6 +20,7 @@ namespace WpfLesson6
                 myColor.A = value;
                 OnPropertyChanged();
                 OnPropertyChanged("MyColor_");
+                OnPropertyChanged("HexColor");
             }
         }
         public byte Red
@@ -31,6 +31,7 @@ namespace WpfLesson6
                 myColor.R = value;
                 OnPropertyChanged();
                 OnPropertyChanged("MyColor_");
+                OnPropertyChanged("HexColor");
             }
         }
         public string HexColor
@@ -48,6 +49,7 @@ namespace WpfLesson6
                 myColor.B = value;
                 OnPropertyChanged();
                 OnPropertyChanged("MyColor_");
+                OnPropertyChanged("HexColor");
             }
         }
         public byte Green
@@ -58,6 +60,7 @@ namespace WpfLesson6
                 myColor.G = value;
                 OnPropertyChanged();
                 OnPropertyChanged("MyColor_");
+                OnPropertyChanged("HexColor");
             }
         }
         public MyColor()
@@ -81,6 +84,12 @@ namespace WpfLesson6
         public void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public object Clone()
+        {
+            MyColor clone = (MyColor)this.MemberwiseClone();
+            return clone;
         }
     }
 }

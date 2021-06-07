@@ -10,7 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
     <Grid>
@@ -35,12 +35,12 @@
             <TextBlock Margin="0,6,0,0" Grid.Row="2" Grid.Column="1" Text="{Binding MyColor_.Green, Mode=OneWay}"/>
         <Label Grid.Column="0" Grid.Row="3" >Blue:</Label>
             <TextBlock Margin="0,6,0,0" Grid.Row="3" Grid.Column="1" Text="{Binding MyColor_.Blue, Mode=OneWay}"/>
-            <Slider Grid.Row="0" Grid.Column="2" Margin="0,5,0,0" Maximum="255" Minimum="1" Value="{Binding MyColor_.Alpha, Mode=OneWayToSource}">
+            <Slider Grid.Row="0" Grid.Column="2" Margin="0,5,10,0" Maximum="255" Minimum="1" Value="{Binding MyColor_.Alpha, Mode=TwoWay}">
             
         </Slider>
-            <Slider Grid.Row="1" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Red, Mode=OneWayToSource}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
-            <Slider Grid.Row="2" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Green, Mode=OneWayToSource}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
-            <Slider Grid.Row="3" Grid.Column="2" Margin="0,5,0,0" Value="{Binding MyColor_.Blue, Mode=OneWayToSource}" Maximum="255" Minimum="1" SmallChange="1"></Slider>
+            <Slider Grid.Row="1" Grid.Column="2" Margin="0,5,10,0" Value="{Binding MyColor_.Red, Mode=TwoWay}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
+            <Slider Grid.Row="2" Grid.Column="2" Margin="0,5,10,0" Value="{Binding MyColor_.Green, Mode=TwoWay}" Minimum="1" Maximum="255" SmallChange="1"></Slider>
+            <Slider Grid.Row="3" Grid.Column="2" Margin="0,5,10,0" Value="{Binding MyColor_.Blue, Mode=TwoWay}" Maximum="255" Minimum="1" SmallChange="1"></Slider>
             <Border Grid.Column="3"  Grid.Row="0" Grid.RowSpan="4">
                 <Border.Background>
                     <SolidColorBrush Color="{Binding Path=MyColor_.MyColor_}"></SolidColorBrush>
@@ -49,26 +49,26 @@
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0">Add</Button>
-            <Button Grid.Column="1">Add</Button>
+            <Button Grid.Column="0" Command="{Binding AddColorCommand}" FontFamily="Bebas" >Add</Button>
+            <Button Grid.Column="1" Command="{Binding RemoveColorCommand}">Remove</Button>
         </Grid>
-        <ListBox Grid.Row="2" Name="ColorsListBox" ItemsSource="{Binding ColorsCollection}" SelectionChanged="ColorsListBox_SelectionChanged">
+        <ListBox Grid.Row="2" Name="ColorsListBox" ItemsSource="{Binding ColorNumarable}" SelectedItem="{Binding Path=MyColor_, Mode=TwoWay}" SelectionChanged="ColorsListBox_SelectionChanged">
             <!--<ListBox.ItemTemplate>
                 <ListBoxItem>Fefe</ListBoxItem>
             </ListBox.ItemTemplate>-->
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Margin="5">
-                        <Border Width="100" Height="75" >
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Border Width="100" Height="25" >
                             <Border.Background>
                                 <SolidColorBrush Color="{Binding Path=MyColor_}"></SolidColorBrush>
                             </Border.Background>
                         </Border>
-                        <TextBlock FontSize="16" Text="{Binding Path=HexColor}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Path=HexColor}" Margin="5" HorizontalAlignment="Center" />
+                        <!--<TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center" />-->
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

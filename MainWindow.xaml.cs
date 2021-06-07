@@ -32,8 +32,8 @@ namespace WpfLesson6
 
         private void ColorsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            viewModel.MyColor_ = (MyColor)ColorsListBox.SelectedItem;
-            viewModel.MyColor_.OnPropertyChanged();
+            //viewModel.MyColor_ = (MyColor)ColorsListBox.SelectedItem;
+            //viewModel.MyColor_.OnPropertyChanged();
         }
     }
 }
