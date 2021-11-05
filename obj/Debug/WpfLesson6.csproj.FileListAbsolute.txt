@@ -43,3 +43,17 @@ C:\Users\Igor\source\repos\WpfLesson6\obj\Debug\WpfLesson6.csproj.CoreCompileInp
 C:\Users\Igor\source\repos\WpfLesson6\obj\Debug\WpfLesson6.exe
 C:\Users\Igor\source\repos\WpfLesson6\obj\Debug\WpfLesson6.pdb
 C:\Users\Igor\source\repos\WpfLesson6\obj\Debug\WpfLesson6.csprojAssemblyReference.cache
+G:\Projects\WpfLesson6\bin\Debug\WpfLesson6.exe.config
+G:\Projects\WpfLesson6\bin\Debug\WpfLesson6.exe
+G:\Projects\WpfLesson6\bin\Debug\WpfLesson6.pdb
+G:\Projects\WpfLesson6\obj\Debug\MainWindow.g.cs
+G:\Projects\WpfLesson6\obj\Debug\App.g.cs
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6_MarkupCompile.cache
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6_MarkupCompile.lref
+G:\Projects\WpfLesson6\obj\Debug\MainWindow.baml
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.g.resources
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.Properties.Resources.resources
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.csproj.GenerateResource.cache
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.csproj.CoreCompileInputs.cache
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.exe
+G:\Projects\WpfLesson6\obj\Debug\WpfLesson6.pdb
